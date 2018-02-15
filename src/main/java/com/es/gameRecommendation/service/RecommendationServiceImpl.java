@@ -43,9 +43,10 @@ public class RecommendationServiceImpl implements RecommendationService {
 			customer.getCustomerRecommendations().stream().limit(count).forEach((r) -> {
 				cr.getRecommendations().add(r.getRecommendation());
 			});
+			return cr;
+		}else {
+			return null;
 		}
-
-		return cr;
 	}
 
 	@Override
